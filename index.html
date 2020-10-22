@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>App Bitcoin</title>
+  </head>
+  <body>
+ <form id="login" method="post">
+Nombre: <input type="text" name="nombre" ><br>
+Apellido Paterno: <input type="text" name="apellidop" ><br>
+Apellido Materno: <input type="text" name="apellidom" ><br>
+ Email: <input type="email" name="email" value="" placeholder="escribe tu correo"><br>
+ Password: <input type="password" name="password" value="" placeholder="escribe tu password"><br>
+ <br><br>
+ <input type="submit" value="Registro">
+<p><a href="movimientos.html">movimientos</a></p>
+ </form>
+
+ <script type="text/javascript">
+ const formLogin=document.querySelector('#login')
+ const formData = new FormData(formLogin)
+// Nombre: <input type="text" name="nombre" value="nombre"><br>
+// Apellido Paterno: <input type="text" name="apellidop" value="apellido paterno"><br>
+ //Apellido Materno: <input type="text" name="apellidom" value="apellido materno"><br>
+ formLogin.addEventListener('submit', event => {
+   event.preventDefault()
+   fetch('http://localhost:3000/Registro', {
+     method: 'POST',
+     body: formData
+   })
+   .then(res => res.json())
+   .then(data => console.log(data))
+  })
+ </script>
+  </body>
+</html>
