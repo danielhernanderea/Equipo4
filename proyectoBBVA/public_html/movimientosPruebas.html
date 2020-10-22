@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Movimientos</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div>Se veran los movimientos que has realizado</div>
+        <h1>Movimientos</h1>
+        <form>
+            <table border='2'>
+                <tr>
+                    <th> Operacion</th>
+                    <th>Type</th>
+                    <th> Fecha</th>
+                    <th>Costo</th>
+                    <th> Precio de compra</th>
+                    <th>Descripcion</th>
+                </tr>
+                <tr>
+                    <td>Compra</td>
+                    <td>BTC</td>
+                    <td>18/08/2020</td>--><!-- comment -->
+                    <td>2300</td><!-- comment -->
+                    <td>2500000</td><!-- comment -->
+                    <td>Pesos a BTC</td><!-- comment -->
+                </tr>
+            </table>
+        </form>
+        <script type="text/javascript">
+cabeceras.append('authorization', 'Bearer $[localStorage.token]')
+   fetch('http://localhost:3000/Movimientos/prueba@bbva.com',{
+     method: 'GET',
+     headers: cabeceras,
+     mode:'no-cors',
+     body:datos
+   })
+   .then(res => res.json())
+   .then(data =>console.log(data))
+ </script> 
+    </body>
+</html>
